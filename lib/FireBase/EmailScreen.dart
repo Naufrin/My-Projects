@@ -18,7 +18,6 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController password = TextEditingController();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     check();
   }
