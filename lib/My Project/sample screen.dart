@@ -1,856 +1,271 @@
+//Text Widget detailed
 import 'package:flutter/material.dart';
 
-class CarBrandsHomeScreen extends StatefulWidget {
-  const CarBrandsHomeScreen({Key? key}) : super(key: key);
+class TextScreen extends StatefulWidget {
+  const TextScreen({Key? key}) : super(key: key);
 
   @override
-  State<CarBrandsHomeScreen> createState() => _CarBrandsHomeScreenState();
+  State<TextScreen> createState() => _TextScreenState();
 }
 
-class _CarBrandsHomeScreenState extends State<CarBrandsHomeScreen> {
+class _TextScreenState extends State<TextScreen> {
+
   @override
   Widget build(BuildContext context) {
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[Colors.red, Colors.blue, Colors.green, Colors.limeAccent,Colors.yellow,Colors.deepPurple,Colors.tealAccent],
+    ).createShader(Rect.fromLTWH(50.0, 10.0,  MediaQuery.of(context).size.height * 1, MediaQuery.of(context).size.width * 1));
+    final Shader linearGradient1 = LinearGradient(
+      colors: <Color>[Colors.red, Colors.blue, Colors.green, Colors.limeAccent,Colors.yellow,Colors.deepPurple,Colors.tealAccent],
+    ).createShader(Rect.fromLTWH(100.0, 0.0, 200.0, 70.0));
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        child: Stack(
+        child: Column(
           children: [
-            Column(
-              children: [
-                Container(
-                  height: 100,
-                  width: 390,
-                  // color: Colors.green,
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 15, top: 35),
-                        child: Icon(
-                          Icons.grid_view_outlined,
-                          size: 25,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 125,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 35),
-                        child: Text(
-                          "Home",
-                          style: TextStyle(fontSize: 17, color: Colors.black),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 130,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 35),
-                        child: Icon(
-                          Icons.notifications,
-                          size: 21,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
+            Text("Text Widget"),
+            Container(
+                height: 100,
+                width: 200,
+                color: Colors.grey,
+                child: Text("Text Widget", textAlign: TextAlign.left)),
+            Text(
+              "textScaleFactor: 2",
+              textScaleFactor: 2,
+            ),
+            Text(
+              "textScaleFactor: 4",
+              textScaleFactor: 4,
+            ),
+            Container(
+                height: 50,
+                width: 50,
+                child: Text(
+                  "All 'partly filled' icons are removed due to single colour restriction for .ttf fonts. This includes partly-filled battery icons and not-full-strength wifi/reception icons.",
+                  overflow: TextOverflow.clip,
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+                height: 50,
+                width: 50,
+                child: Text(
+                  "All 'partly filled' icons are removed due to single colour restriction for .ttf fonts. This includes partly-filled battery icons and not-full-strength wifi/reception icons.",
+                  overflow: TextOverflow.ellipsis,
+                )),
+            Container(
+                height: 50,
+                width: 50,
+                child: Text(
+                  "All 'partly filled' icons are removed due to single colour restriction for .ttf fonts. This includes partly-filled battery icons and not-full-strength wifi/reception icons.",
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
+                )),
+            Text(
+                "All 'partly filled' icons are removed due to single colour restriction for .ttf fonts. This includes partly-filled battery icons and not-full-strength wifi/reception icons and not-full-strength .",
+                maxLines: 3),
+            Text(
+              "color: Colors.red",
+              style: TextStyle(color: Colors.red),
+            ),
+            Text(
+              "fontSize: 20",
+              style: TextStyle(fontSize: 20),
+            ),
+            Text(
+              "fontSize: 10",
+              style: TextStyle(fontSize: 10),
+            ),
+            Text(
+              "backgroundColor: Colors.lightBlueAccent",
+              style: TextStyle(backgroundColor: Colors.lightBlueAccent),
+            ),
+            Text(
+              "fontWeight: FontWeight.bold",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Text(
+              "fontWeight: FontWeight.w100",
+              style: TextStyle(fontWeight: FontWeight.w100),
+            ),
+            Text(
+              "fontWeight: FontWeight.w700",
+              style: TextStyle(fontWeight: FontWeight.w700),
+            ),
+            Text(
+              "All 'partly filled' icons are removed due to single colour restriction for .ttf fonts. This includes partly-filled battery icons and not-full-strength wifi/reception icons and not-full-strength .",
+              style: TextStyle(height: 5),
+            ),
+            Text(
+              "All 'partly filled' icons are removed due to single colour restriction for .ttf fonts. This includes partly-filled battery icons and not-full-strength wifi/reception icons and not-full-strength .",
+              style: TextStyle(height: 1),
+            ),
+            Text(
+              "letterSpacing: 3",
+              style: TextStyle(letterSpacing: 3),
+            ),
+            Text(
+              "letterSpacing: 5",
+              style: TextStyle(letterSpacing: 5),
+            ),
+            Text(
+              "wordSpacing: 1, Hii Hello",
+              style: TextStyle(wordSpacing: 1),
+            ),
+            Text(
+              "wordSpacing: 5, Hii Hello",
+              style: TextStyle(wordSpacing: 5),
+            ),
+            Text(
+              "fontStyle: FontStyle.italic",
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+            Text(
+              "decoration: TextDecoration.none",
+              style: TextStyle(
+                decoration: TextDecoration.none,
+              ),
+            ),
+            Text(
+              "decoration: TextDecoration.underline",
+              style: TextStyle(decoration: TextDecoration.underline),
+            ),
+            Text(
+              "decoration: TextDecoration.lineThrough",
+              style: TextStyle(decoration: TextDecoration.lineThrough),
+            ),
+            Text(
+              "decoration: TextDecoration.overline",
+              style:
+              TextStyle(decoration: TextDecoration.overline, fontSize: 20),
+            ),
+            Text(
+              "decoration: TextDecoration.underline, decorationStyle: TextDecorationStyle.dashed,",
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                decorationStyle: TextDecorationStyle.dashed,
+              ),
+            ),
+            Text(
+              "decoration: TextDecoration.underline, decorationStyle: TextDecorationStyle.solid,",
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                decorationStyle: TextDecorationStyle.solid,
+              ),
+            ),
+            Text(
+              "decoration: TextDecoration.underline, decorationStyle: TextDecorationStyle.dotted,",
+              style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  decorationStyle: TextDecorationStyle.dotted,
+                  fontSize: 20),
+            ),
+            Text(
+              "decoration: TextDecoration.underline, decorationStyle: TextDecorationStyle.double,",
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                decorationStyle: TextDecorationStyle.double,
+                fontSize: 20,
+                decorationColor: Colors.red,
+                decorationThickness: 1,
+              ),
+            ),
+            Text(
+              "decoration: TextDecoration.underline, decorationColor: Colors.red,",
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                decorationColor: Colors.red,
+              ),
+            ),
+            Text(
+              "decoration: TextDecoration.underline, decorationColor: Colors.red,",
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                decorationColor: Colors.red,
+                decorationThickness: 5,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "BackGround Property",
+              style: TextStyle(
+                background: Paint()
+                  ..color = Colors.blue
+                  ..strokeJoin = StrokeJoin.round
+                  ..strokeCap = StrokeCap.round
+                  ..style = PaintingStyle.stroke
+                  ..strokeWidth = 30.0,
+                foreground: Paint()
+                  ..style = PaintingStyle.stroke
+                  ..color = Colors.red
+                  ..strokeWidth = 2,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Foreground Property",
+              style: TextStyle(
+                foreground: Paint()
+                  ..style = PaintingStyle.stroke
+                  ..color = Colors.blue
+                  ..strokeWidth = 2,
+              ),
+            ),
+            Text(
+              "Shadows Shadow",
+              style: TextStyle(
+                color: Colors.green,
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(1.0, 1.0),
+                    blurRadius: 3.0,
+                    color: Colors.blue,
                   ),
-                ),
-                Container(
-                  height: 75,
-                  width: 390,
-                  //  color: Colors.green,
-                  child: ListTile(
-                    title: Text(
-                      "Hi Sudhansu!",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    subtitle: Padding(
-                      padding: const EdgeInsets.only(top: 7),
-                      child: Text(
-                        "Search Your favourite car here..",
-                        style: TextStyle(
-                            fontSize: 17, color: Colors.grey.shade400),
-                      ),
-                    ),
+                  Shadow(
+                    offset: Offset(8.0, 8.0),
+                    blurRadius: 3.0,
+                    color: Colors.red,
                   ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  height: 200,
-                  width: 330,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color(0xfff8c375),
+                  Shadow(
+                    offset: Offset(15.0, 15.0),
+                    blurRadius: 3.0,
+                    color: Colors.orange,
                   ),
-                  child: Stack(
-                    children: [
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 200,
-                              width: 170,
-                              // color: Colors.blue,
-                              child: Column(
-                                children: [
-                                  ListTile(
-                                    title: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 5, top: 50),
-                                      child: Text(
-                                        "Explore Latest",
-                                        style: TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 5, top: 5),
-                                      child: Text(
-                                        "Cars with price",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 15,
-                                            color: Colors.grey.shade600),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      print("object");
-                                    },
-                                    child: Container(
-                                      height: 50,
-                                      width: 130,
-                                      decoration: BoxDecoration(
-                                          color: Colors.black,
-                                          shape: BoxShape.rectangle,
-                                          borderRadius:
-                                          BorderRadius.circular(25)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 33, top: 15),
-                                        child: Text(
-                                          "Explore",
-                                          style: TextStyle(
-                                              fontSize: 16,
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(),
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: Container(
-                          height: 200,
-                          width: 180,
-
-                          //  color: Colors.blue,
-                          child: Image.asset(
-                            "assets/Suv.png",
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  height: 40,
-                  width: 350,
-                  //  color: Colors.yellowAccent,
-                  child: ListTile(
-                    leading: Text(
-                      "The most searched cars",
-                      style:
-                      TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-                    ),
-                    trailing: InkWell(
-                      onTap: () {
-                        print("object");
-                      },
-                      child: Text(
-                        "View all",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Color(0xfff8c375)),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  height: 210,
-                  width: 330,
-                  //  color: Colors.blue,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      Row(
-                        children: [
-                          Container(
-                            height: 210,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 130,
-                                  width: 170,
-                                  //  color: Colors.tealAccent,
-                                  child: Image.asset(
-                                    "assets/Hyundai.png",
-                                    fit: BoxFit.fitHeight,
-                                  ),
-                                ),
-                                Container(
-                                  height: 70,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: ListTile(
-                                    title: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 30, bottom: 10),
-                                      child: Text(
-                                        "Hyundai I20",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding:
-                                      const EdgeInsets.only(bottom: 50),
-                                      child: Text(
-                                        "Rs7.03 - 11.54 Lakh*",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            height: 210,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 130,
-                                  width: 170,
-                                  //  color: Colors.tealAccent,
-                                  child: Image.asset(
-                                    "assets/Toyota.png",
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                                Container(
-                                  height: 70,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: ListTile(
-                                    title: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 30, bottom: 10),
-                                      child: Text(
-                                        "Fortuner",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding:
-                                      const EdgeInsets.only(bottom: 10),
-                                      child: Text(
-                                        "Rs31.79 - 48.43 Lakh*",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            height: 210,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 130,
-                                  width: 170,
-                                  //  color: Colors.tealAccent,
-                                  child: Image.asset(
-                                    "assets/Baleno.png",
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                                Container(
-                                  height: 70,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: ListTile(
-                                    title: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 30, bottom: 10),
-                                      child: Text(
-                                        "Baleno(Suzuki)",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding:
-                                      const EdgeInsets.only(bottom: 50),
-                                      child: Text(
-                                        "Rs6.03 - 8.54 Lakh*",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            height: 210,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 130,
-                                  width: 170,
-                                  //  color: Colors.tealAccent,
-                                  child: Image.asset(
-                                    "assets/Tata.png",
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                                Container(
-                                  height: 70,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: ListTile(
-                                    title: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 30, bottom: 10),
-                                      child: Text(
-                                        "Harrier(TATA)",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding:
-                                      const EdgeInsets.only(bottom: 10),
-                                      child: Text(
-                                        "Rs14.79 - 21.54 Lakh*",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            height: 210,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 130,
-                                  width: 170,
-                                  //  color: Colors.tealAccent,
-                                  child: Image.asset(
-                                    "assets/Thar.png",
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                                Container(
-                                  height: 70,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: ListTile(
-                                    title: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 30, bottom: 10),
-                                      child: Text(
-                                        "Thar(Mahindra)",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding:
-                                      const EdgeInsets.only(bottom: 10),
-                                      child: Text(
-                                        "Rs13.58 - 16.27 Lakh*",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                //............................................................................//
-                Container(
-                  height: 40,
-                  width: 350,
-                  //  color: Colors.yellowAccent,
-                  child: ListTile(
-                    leading: Text(
-                      "Recommended cars for you",
-                      style:
-                      TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-                    ),
-                    trailing: InkWell(
-                      onTap: () {
-                        print("object");
-                      },
-                      child: Text(
-                        "View all",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Color(0xfff8c375)),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  height: 210,
-                  width: 330,
-                  //  color: Colors.blue,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      Row(
-                        children: [
-                          Container(
-                            height: 210,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 130,
-                                  width: 170,
-                                  //  color: Colors.tealAccent,
-                                  child: Image.asset(
-                                    "assets/Creta.png",
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                                Container(
-                                  height: 70,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: ListTile(
-                                    title: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 30, bottom: 10),
-                                      child: Text(
-                                        "Hyundai Creta",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding:
-                                      const EdgeInsets.only(bottom: 10),
-                                      child: Text(
-                                        "Rs10.44 - 18.24 Lakh*",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            height: 210,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 130,
-                                  width: 170,
-                                  //  color: Colors.tealAccent,
-                                  child: Image.asset(
-                                    "assets/Punch.png",
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                                Container(
-                                  height: 70,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: ListTile(
-                                    title: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 30, bottom: 10),
-                                      child: Text(
-                                        "Punch(TATA)",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding:
-                                      const EdgeInsets.only(bottom: 10),
-                                      child: Text(
-                                        "Rs5.99 - 8.93 Lakh*",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            height: 210,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 130,
-                                  width: 170,
-                                  //  color: Colors.tealAccent,
-                                  child: Image.asset(
-                                    "assets/X5.png",
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                                Container(
-                                  height: 70,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: ListTile(
-                                    title: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 30, bottom: 10),
-                                      child: Text(
-                                        "BMW X5",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding:
-                                      const EdgeInsets.only(bottom: 10),
-                                      child: Text(
-                                        "Rs70.03 - 81.54 Lakh*",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            height: 210,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 130,
-                                  width: 170,
-                                  //  color: Colors.tealAccent,
-                                  child: Image.asset(
-                                    "assets/Lexus.png",
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                                Container(
-                                  height: 70,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: ListTile(
-                                    title: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 30, bottom: 10),
-                                      child: Text(
-                                        "Lexus NX",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding:
-                                      const EdgeInsets.only(bottom: 10),
-                                      child: Text(
-                                        "Rs64.90 - 71.24 Lakh*",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            height: 210,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 130,
-                                  width: 170,
-                                  //  color: Colors.tealAccent,
-                                  child: Image.asset(
-                                    "assets/LandRover.png",
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                                Container(
-                                  height: 70,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: ListTile(
-                                    title: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 30, bottom: 10),
-                                      child: Text(
-                                        "LandRover",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding:
-                                      const EdgeInsets.only(bottom: 10),
-                                      child: Text(
-                                        "Rs85.58 - 98.27 Lakh*",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            )
+                ],
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Gradients Text Widget Gradients Text Widget',
+              style: new TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  foreground: Paint()..shader = linearGradient),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'Gradients Text Widget',
+              style: new TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  foreground: Paint()..shader = linearGradient1),
+            ),
+            SizedBox(
+              height: 20,
+            ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        currentIndex: 0,
-        items: [
-          BottomNavigationBarItem(
-              label: "Home",
-              icon: Icon(
-                Icons.home_filled,
-                color: Colors.grey.shade500,
-              )),
-          BottomNavigationBarItem(
-              label: "Search",
-              icon: Icon(
-                Icons.search,
-                color: Colors.grey.shade500,
-              )),
-          BottomNavigationBarItem(
-              label: "Like",
-              icon: Icon(
-                Icons.favorite_outline,
-                color: Colors.grey.shade500,
-              )),
-          BottomNavigationBarItem(
-              label: "Shave",
-              icon: Icon(
-                Icons.bookmark_border_outlined,
-                color: Colors.grey.shade500,
-              )),
-        ],
       ),
     );
   }
 }
+

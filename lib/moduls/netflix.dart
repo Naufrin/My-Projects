@@ -29,10 +29,12 @@ class _NetflixState extends State<Netflix> {
         centerTitle: true,
         title: Text(
           "NETFLIX",
-          style: TextStyle(
-              color: Color(0xffe20513),
-              fontWeight: FontWeight.bold,
-              fontSize: 33),
+          style: new TextStyle(
+            color: Color(0xffe20513),
+            fontFamily: "Poppins",
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
           TextButton(
@@ -150,7 +152,8 @@ class _NetflixState extends State<Netflix> {
                   SizedBox(
                     height: 10,
                   ),
-                  RichText(textAlign: TextAlign.center,
+                  RichText(
+                    textAlign: TextAlign.center,
                     text: TextSpan(
                       children: [
                         TextSpan(
@@ -180,41 +183,45 @@ class _NetflixState extends State<Netflix> {
                       ],
                     ),
                   ),
-
                   description == false
-                      ? RichText(textAlign: TextAlign.center,
+                      ? RichText(
+                          textAlign: TextAlign.center,
                           text: TextSpan(
-
-                          text:
-                              "The information collected by google reCAPTCHA is subject to th Google  ",
-
-                          style: TextStyle(color: Colors.white54,),
-                          children: [
-                            TextSpan(
-                                text: "Privacy Policy",
-                                style: TextStyle(color: Colors.blue),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () async {  Uri url = Uri.parse(
-                                      "https://policies.google.com/privacy");
-                                  await launchUrl(url);}),
-                            TextSpan(
-                              text: " and ",
-                              style: TextStyle(color: Colors.white54),
+                            text:
+                                "The information collected by google reCAPTCHA is subject to th Google  ",
+                            style: TextStyle(
+                              color: Colors.white54,
                             ),
-                            TextSpan(
-                                text: "Terms of Service ",
-                                style: TextStyle(color: Colors.blue),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () async {  Uri url = Uri.parse(
-                                      "https://policies.google.com/terms");
-                                  await launchUrl(url);}),
-                            TextSpan(
-                              text:
-                                  ", and is used for providing,maintaining,and improving the reCAPTCHA service and for the general security purposes (it is not used for personalized advertising by Google)  ",
-                              style: TextStyle(color: Colors.white54),
-                            ),
-                          ],
-                        ))
+                            children: [
+                              TextSpan(
+                                  text: "Privacy Policy",
+                                  style: TextStyle(color: Colors.blue),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () async {
+                                      Uri url = Uri.parse(
+                                          "https://policies.google.com/privacy");
+                                      await launchUrl(url);
+                                    }),
+                              TextSpan(
+                                text: " and ",
+                                style: TextStyle(color: Colors.white54),
+                              ),
+                              TextSpan(
+                                  text: "Terms of Service ",
+                                  style: TextStyle(color: Colors.blue),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () async {
+                                      Uri url = Uri.parse(
+                                          "https://policies.google.com/terms");
+                                      await launchUrl(url);
+                                    }),
+                              TextSpan(
+                                text:
+                                    ", and is used for providing,maintaining,and improving the reCAPTCHA service and for the general security purposes (it is not used for personalized advertising by Google)  ",
+                                style: TextStyle(color: Colors.white54),
+                              ),
+                            ],
+                          ))
                       : Container()
                 ],
               ),
