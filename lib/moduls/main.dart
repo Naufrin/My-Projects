@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'netflix.dart';
+
+import '../FireBase/EmailScreen.dart';
+
 
 
 void main() async{
@@ -11,6 +13,6 @@ void main() async{
     theme: ThemeData(
       fontFamily: "Poppins",
     ),
-    home: Netflix(),
+    home: LoginPage(),
   ));
 }

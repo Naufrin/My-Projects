@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:shared_preferences/shared_preferences.dart";
-import 'EmailLoginScreen.dart';
+import '../Api Screens/Eight Api Screen.dart';
 
 class FirebaseEmail extends StatefulWidget {
   FirebaseEmail({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _FirebaseEmailState extends State<FirebaseEmail> {
             SharedPreferences pref = await SharedPreferences.getInstance();
             await pref.setBool("LOG IN STATUS", true);
             Navigator.push(
-                context, MaterialPageRoute(builder: (ctx) => LoginPage()));
+                context, MaterialPageRoute(builder: (ctx) => EighthApiPage()));
           },
         ),
         body: Center(

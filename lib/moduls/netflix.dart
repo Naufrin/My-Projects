@@ -17,7 +17,6 @@ class _NetflixState extends State<Netflix> {
   void initState() {
     super.initState();
   }
-
   bool description = true;
   @override
   Widget build(BuildContext context) {
