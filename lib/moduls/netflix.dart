@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'SignupPage.dart';
 
 class Netflix extends StatefulWidget {
   const Netflix({Key? key}) : super(key: key);
@@ -17,6 +20,7 @@ class _NetflixState extends State<Netflix> {
   void initState() {
     super.initState();
   }
+
   bool description = true;
   @override
   Widget build(BuildContext context) {
@@ -116,7 +120,25 @@ class _NetflixState extends State<Netflix> {
                     width: 320,
                     height: 40,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        try {
+                          await FirebaseAuth.instance
+                              .signInWithEmailAndPassword(
+                                  email: username.text.trim(),
+                                  password: password.text.trim())
+                              .then((value) => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Selectpersonscreen())));
+                          SharedPreferences pref =
+                              SharedPreferences.getInstance()
+                                  as SharedPreferences;
+                          pref.setBool("logstatus", true);
+                        } catch (e) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text(e.toString())));
+                        }
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black26,
                         shape: RoundedRectangleBorder(

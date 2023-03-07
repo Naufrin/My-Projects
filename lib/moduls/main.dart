@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
-import '../FireBase/EmailScreen.dart';
+import 'SignupPage.dart';
 
 
 
@@ -13,6 +12,6 @@ void main() async{
     theme: ThemeData(
       fontFamily: "Poppins",
     ),
-    home: LoginPage(),
+    home: Selectpersonscreen(),
   ));
 }
